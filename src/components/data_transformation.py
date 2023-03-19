@@ -25,7 +25,7 @@ class DataTransformation:
     
     def get_data_transformer_object(self):
         try:
-            num_col=["Age","Annual Income (k$)"]
+            num_col=["Age","Annual_Income"]
             cat_col=["Gender"]
         
             num_pipeline=Pipeline(steps=[("Imputer",SimpleImputer(strategy="mean")),
@@ -58,8 +58,8 @@ class DataTransformation:
             logging.info("obtaining preprocessing object")
 
             preprocessing_obj=self.get_data_transformer_object()
-            target_col="Spending Score (1-100)"
-            num_col=["Age","Annual Income (k$)"]
+            target_col="Spending_Score_(1-100)"
+            num_col=["Age","Annual_Income"]
             cat_col=["Gender"]
 
             input_features_train_df=train_df.drop(target_col, axis=1)
